@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import Navbar from "../components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,19 +31,7 @@ export default function RootLayout({
           `}
         </Script>
 
-        <header className="header">
-          <div className="container header-content">
-            <a href="/" className="logo">
-              Home<span className="logo-accent">link</span>
-            </a>
-            <nav className="nav-links">
-              <a href="/" className="nav-link">Beranda</a>
-              <a href="/#artikel" className="nav-link">Artikel</a>
-              <a href="/tentang-kami" className="nav-link">Tentang Kami</a>
-              <a href="/kontak" className="nav-link">Kontak</a>
-            </nav>
-          </div>
-        </header>
+        <Navbar />
         <main>{children}</main>
         <footer className="footer">
           <div className="container">
