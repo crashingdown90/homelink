@@ -1,66 +1,44 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import ArticleList from "@/components/ArticleList";
+import BannerSlider from "@/components/BannerSlider";
+import { articles } from "@/data/articles";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
+    <>
+      <section className="hero">
+        <div className="container hero-content">
+          <h1>
+            Wujudkan Rumah Impian<br />Bersama <span>Homelink</span>
+          </h1>
           <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+            Temukan berbagai artikel inspiratif, tips cerdas membeli properti, dan ide dekorasi kekinian untuk menciptakan hunian yang nyaman dan menawan.
           </p>
+          <a href="#artikel" className="btn-primary">Jelajahi Artikel</a>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className="container" style={{ marginTop: '-5rem', position: 'relative', zIndex: 10, marginBottom: '2rem' }}>
+        <BannerSlider />
+      </section>
+
+      <section id="artikel" className="articles-section">
+        <div className="container">
+          <div className="section-header">
+            <div>
+              <h2 className="section-title">Artikel Terbaru</h2>
+              <p className="section-subtitle">Pembaruan terkini seputar dunia properti dan hunian.</p>
+            </div>
+            <a href="#" className="view-all">
+              Lihat Semua Artikel 
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </a>
+          </div>
+
+          <ArticleList initialArticles={articles} />
         </div>
-      </main>
-    </div>
+      </section>
+    </>
   );
 }
