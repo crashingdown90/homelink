@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://homelink.vercel.app'),
   title: "Homelink | Inspirasi & Tips Properti Terbaik",
   description: "Temukan artikel, tips membeli rumah, ide dekorasi, dan inspirasi desain interior terbaik di Homelink. Wujudkan rumah impian Anda bersama kami.",
+  verification: {
+    google: "pszpmWioePFO02LHe_iRiiynPlb_AQZtjcZM1EKskxg",
+  },
 };
 
 export default function RootLayout({
