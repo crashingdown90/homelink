@@ -10,8 +10,9 @@ const slugToCategory: Record<string, string> = {
   "teknologi-gaya-hidup": "Teknologi & Gaya Hidup",
 };
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const categoryName = slugToCategory[params.slug] || "Kategori";
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const categoryName = slugToCategory[resolvedParams.slug] || "Kategori";
   return {
     title: `${categoryName} | Homelink`,
     description: `Temukan berbagai artikel menarik dan inspiratif tentang ${categoryName} hanya di Homelink.`,
@@ -24,8 +25,9 @@ export function generateStaticParams() {
   }));
 }
 
-export default function CategoryPage({ params }: { params: { slug: string } }) {
-  const categoryName = slugToCategory[params.slug];
+export default async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+  const categoryName = slugToCategory[resolvedParams.slug];
   
   if (!categoryName) {
     return (
