@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
+import Link from "next/link";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 
@@ -59,20 +60,20 @@ export default function RootLayout({
               <div className="footer-links">
                 <h3>Kategori</h3>
                 <ul>
-                  <li><a href="#">Tips Membeli Rumah</a></li>
-                  <li><a href="#">Ide Dekorasi</a></li>
-                  <li><a href="#">Renovasi</a></li>
-                  <li><a href="#">Inspirasi Desain</a></li>
+                  <li><Link href="/kategori/tips-beli-rumah">Tips Beli Rumah</Link></li>
+                  <li><Link href="/kategori/dekorasi">Ide Dekorasi</Link></li>
+                  <li><Link href="/kategori/renovasi">Renovasi</Link></li>
+                  <li><Link href="/kategori/inspirasi-ruangan">Inspirasi Ruangan</Link></li>
                 </ul>
               </div>
               <div className="footer-links">
                 <h3>Perusahaan</h3>
                 <ul>
-                  <li><a href="/tentang-kami">Tentang Kami</a></li>
-                  <li><a href="/kontak">Kontak Kami</a></li>
-                  <li><a href="/kebijakan-privasi">Kebijakan Privasi</a></li>
-                  <li><a href="/syarat-ketentuan">Syarat & Ketentuan</a></li>
-                  <li><a href="/disclaimer">Penafian (Disclaimer)</a></li>
+                  <li><Link href="/tentang-kami">Tentang Kami</Link></li>
+                  <li><Link href="/kontak">Kontak Kami</Link></li>
+                  <li><Link href="/kebijakan-privasi">Kebijakan Privasi</Link></li>
+                  <li><Link href="/syarat-ketentuan">Syarat & Ketentuan</Link></li>
+                  <li><Link href="/disclaimer">Penafian (Disclaimer)</Link></li>
                 </ul>
               </div>
             </div>

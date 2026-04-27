@@ -11,7 +11,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const staticPages = ['', '/tentang-kami', '/kontak', '/kebijakan-privasi', '/syarat-ketentuan', '/disclaimer'].map((route) => ({
+  const staticPages = [
+    '', 
+    '/tentang-kami', 
+    '/kontak', 
+    '/kebijakan-privasi', 
+    '/syarat-ketentuan', 
+    '/disclaimer',
+    '/kalkulator-kpr',
+    '/kalkulator-kelayakan',
+    '/kalkulator-pajak',
+    '/kamus-properti',
+    '/panduan/membeli-rumah-pertama'
+  ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
