@@ -5,6 +5,7 @@ import { art4 } from './art4';
 import { art5 } from './art5';
 import { art6 } from './art6';
 import { art7 } from './art7';
+import { art8 } from './art8';
 
 export interface Article {
   id: string;
@@ -21,6 +22,7 @@ export interface Article {
 }
 
 export const articles: Article[] = [
+  ...art8,
   ...art7,
   ...articlesPart1, 
   ...articlesPart2, 
