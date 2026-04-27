@@ -17,46 +17,39 @@ export default function Navbar() {
 
   return (
     <header className="header">
-      <div className="header-top">
-        <div className="container header-content">
-          <Link href="/" className="logo">
-            Home<span className="logo-accent">link</span>
-          </Link>
-          <nav className={`nav-links ${isOpen ? "active" : ""}`}>
-            <Link href="/" className="nav-link" onClick={() => setIsOpen(false)}>Beranda</Link>
-            <Link href="/#artikel" className="nav-link" onClick={() => setIsOpen(false)}>Artikel</Link>
-            <Link href="/tentang-kami" className="nav-link" onClick={() => setIsOpen(false)}>Tentang Kami</Link>
-            <Link href="/kontak" className="nav-link" onClick={() => setIsOpen(false)}>Kontak</Link>
-          </nav>
-          <button className="mobile-menu-btn" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
-            <div className={`hamburger ${isOpen ? "open" : ""}`}>
-              <span></span>
-              <span></span>
-              <span></span>
+      <div className="container header-content">
+        <Link href="/" className="logo">
+          Home<span className="logo-accent">link</span>
+        </Link>
+        <nav className={`nav-links ${isOpen ? "active" : ""}`}>
+          <Link href="/" className="nav-link" onClick={() => setIsOpen(false)}>Beranda</Link>
+          
+          <div className="nav-item-dropdown">
+            <span className="nav-link" style={{cursor: 'pointer'}}>Kategori ▾</span>
+            <div className="dropdown-menu">
+              {categories.map((cat) => (
+                <Link 
+                  key={cat.slug}
+                  href={`/kategori/${cat.slug}`} 
+                  className={`dropdown-link ${pathname.includes(cat.slug) ? 'active' : ''}`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {cat.name}
+                </Link>
+              ))}
             </div>
-          </button>
-        </div>
-      </div>
-      
-      {/* Sub Navbar untuk Kategori (Portal Berita Style) */}
-      <div className="sub-navbar">
-        <div className="container sub-nav-content">
-          <Link 
-            href="/#artikel" 
-            className={`sub-nav-link ${pathname === '/' ? 'active' : ''}`}
-          >
-            Terbaru
-          </Link>
-          {categories.map((cat) => (
-            <Link 
-              key={cat.slug}
-              href={`/kategori/${cat.slug}`} 
-              className={`sub-nav-link ${pathname.includes(cat.slug) ? 'active' : ''}`}
-            >
-              {cat.name}
-            </Link>
-          ))}
-        </div>
+          </div>
+
+          <Link href="/tentang-kami" className="nav-link" onClick={() => setIsOpen(false)}>Tentang Kami</Link>
+          <Link href="/kontak" className="nav-link" onClick={() => setIsOpen(false)}>Kontak</Link>
+        </nav>
+        <button className="mobile-menu-btn" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
+          <div className={`hamburger ${isOpen ? "open" : ""}`}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
       </div>
     </header>
   );
