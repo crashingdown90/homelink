@@ -42,7 +42,7 @@ export default async function ArticlePage({ params }: Props) {
   }
 
   // Schema Markup untuk SEO yang tinggi sesuai standar Google (E-E-A-T)
-  const jsonLd = {
+  const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: article.title,
@@ -68,16 +68,51 @@ export default async function ArticlePage({ params }: Props) {
     }
   };
 
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Beranda',
+        item: 'https://homelink.vercel.app/'
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: article.category,
+        item: `https://homelink.vercel.app/kategori/${article.category.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: article.title,
+        item: `https://homelink.vercel.app/artikel/${article.slug}`
+      }
+    ]
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([articleJsonLd, breadcrumbJsonLd]) }}
       />
       
       <article className="article-layout">
         <header className="article-header">
           <div className="container article-container">
+            <div className="breadcrumb" style={{ marginBottom: '2rem', fontSize: '0.9rem', color: '#64748b' }}>
+              <a href="/" style={{ color: '#0284c7' }}>Beranda</a> 
+              <span style={{ margin: '0 0.5rem' }}>›</span> 
+              <a href={`/kategori/${article.category.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`} style={{ color: '#0284c7' }}>
+                {article.category}
+              </a> 
+              <span style={{ margin: '0 0.5rem' }}>›</span> 
+              <span style={{ color: '#0f172a' }}>{article.title}</span>
+            </div>
+            
             <span className="card-tag">{article.category}</span>
             <h1 className="article-title">{article.title}</h1>
             <div className="article-meta-large">
