@@ -40,6 +40,14 @@ export default function Navbar() {
             </div>
           </div>
 
+          <div className="nav-item-dropdown">
+            <span className="nav-link" style={{cursor: 'pointer'}}>Fitur ▾</span>
+            <div className="dropdown-menu">
+              <Link href="/kalkulator-kpr" className="dropdown-link" onClick={() => setIsOpen(false)}>Kalkulator KPR</Link>
+              <Link href="/kamus-properti" className="dropdown-link" onClick={() => setIsOpen(false)}>Kamus Properti</Link>
+            </div>
+          </div>
+
           <Link href="/tentang-kami" className="nav-link" onClick={() => setIsOpen(false)}>Tentang Kami</Link>
           <Link href="/kontak" className="nav-link" onClick={() => setIsOpen(false)}>Kontak</Link>
         </nav>

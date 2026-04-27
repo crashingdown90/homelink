@@ -1040,3 +1040,191 @@ ul {
     font-size: 0.95rem;
   }
 }
+
+/* Kalkulator KPR Styles */
+.kalkulator-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 24px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.kalkulator-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 768px) {
+  .kalkulator-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.kalkulator-form {
+  padding: 3rem;
+  background: white;
+}
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.kalkulator-input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 1rem;
+  background: #f8fafc;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.kalkulator-input:focus {
+  border-color: var(--primary);
+  background: white;
+}
+
+.range-slider {
+  margin-bottom: 0.5rem;
+}
+
+.range-slider input[type="range"] {
+  width: 100%;
+  accent-color: var(--primary);
+}
+
+.value-display {
+  display: block;
+  text-align: right;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.kalkulator-result {
+  background: #f8fafc;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+  .kalkulator-result {
+    border-left: none;
+    border-top: 1px solid var(--border);
+  }
+}
+
+.result-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
+.result-card h3 {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.cicilan-amount {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.result-details {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+  text-align: left;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.detail-row span:last-child {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.detail-row.total {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--border);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.detail-row.total span:last-child {
+  color: var(--primary);
+}
+
+.disclaimer-text {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* Glossary Styles */
+.glossary-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.glossary-item {
+  background: white;
+  border: 1px solid var(--border);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.glossary-item:hover {
+  transform: translateX(5px);
+  border-color: rgba(2, 132, 199, 0.3);
+  box-shadow: var(--shadow-md);
+}
+
+.glossary-term {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+
+.glossary-definition {
+  font-size: 1.05rem;
+  color: var(--text);
+  line-height: 1.7;
+}
