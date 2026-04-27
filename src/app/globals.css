@@ -423,30 +423,17 @@ ul {
 
 /* Footer */
 .footer {
-  background: linear-gradient(to bottom, #ffffff, #f4f8fc);
-  padding: 6rem 0 3rem;
-  border-top: 1px solid rgba(2, 132, 199, 0.1);
+  background: #ffffff;
+  padding: 5rem 0 2rem;
+  border-top: 1px solid var(--border);
   position: relative;
-  overflow: hidden;
-}
-
-.footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--primary), transparent);
-  box-shadow: 0 0 20px rgba(2, 132, 199, 0.8);
 }
 
 .footer-content {
   display: grid;
-  grid-template-columns: 2fr 1fr 1.5fr;
-  gap: 4rem;
-  margin-bottom: 4rem;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
 }
 
 .footer-brand .logo {
@@ -458,6 +445,7 @@ ul {
   color: var(--text-muted);
   max-width: 320px;
   line-height: 1.8;
+  font-size: 0.95rem;
 }
 
 .footer-links h3, .footer-newsletter h3 {
