@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { articles } from '@/data/articles';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://homelink.vercel.app';
+  const baseUrl = 'https://homelink.co.id';
   
   const articleUrls = articles.map((article) => ({
     url: `${baseUrl}/artikel/${article.slug}`,

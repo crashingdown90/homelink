@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://homelink.vercel.app/sitemap.xml',
+    sitemap: 'https://homelink.co.id/sitemap.xml',
   };
 }
